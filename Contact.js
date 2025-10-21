@@ -1,6 +1,6 @@
-// contact.js
+
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm"); // matches your HTML's id
+  const form = document.getElementById("contactForm");
   if (!form) {
     console.error("contact.js: form with id 'contactForm' not found.");
     return;
@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Basic email regex
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // helper: show inline error message (accessible)
+  // inline error message (accessible)
   function showInlineError(field, msg) {
-    // find or create an <p class="field-error" aria-live> after the field
+    // find or create a <p class="field-error" aria-live> after the field
     let err = field.nextElementSibling;
     if (!err || !err.classList.contains("field-error")) {
       err = document.createElement("p");
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     err.textContent = msg;
     field.setAttribute("aria-invalid", "true");
-    field.style.borderBottom = "2px solid #ef4444"; // red
+    field.style.borderBottom = "2px solid #ef4444"; 
   }
 
   function clearInlineError(field) {
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return true;
     }
 
-    // default
+
     return true;
   }
 
@@ -88,9 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   [fullName, email, subject, message].forEach((f) => {
     if (!f) return;
     f.addEventListener("blur", () => validateField(f));
-    // clear error on input so it's reactive
     f.addEventListener("input", () => {
-      // only clear inline error if field now valid
       if (f.id === "email") {
         if (emailPattern.test(f.value.trim())) clearInlineError(f);
       } else if (f.value.trim()) {

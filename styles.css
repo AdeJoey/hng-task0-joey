@@ -1,6 +1,4 @@
-/* -----------------------------
-   Theme vars
-   ----------------------------- */
+/* Theme variables */
 :root {
    --card-bg: #3348681d;
    --muted: #6b7280;
@@ -54,9 +52,7 @@ article[data-testid="test-profile-card"] {
    box-shadow: 0 6px 18px rgba(16,24,40,0.06);
 }
 
-/* -----------------------------
-   Avatar
-   ----------------------------- */
+/* Avatar */
 figure.avatar-figure {
    margin: 0;
    width: 120px;
@@ -76,9 +72,7 @@ img[data-testid="test-user-avatar"] {
    display: block;
 }
 
-/* -----------------------------
-   Header / Metadata
-   ----------------------------- */
+/* Header */
 header.profile-head {
    display: flex;
    flex-direction: column;
@@ -139,9 +133,8 @@ p[data-testid="test-user-bio"] {
   color: #cbd5e1;
 }
 }
-/* -----------------------------
-   Social pills (icon-only)
-   ----------------------------- */
+
+/* Social pills  */
 nav.social {
    margin-top: 20px; 
 }
@@ -225,7 +218,7 @@ ul.social-list {
    background: transparent;
 }
 
-/* Styled file label (wraps the hidden native input) */
+/* File label  styling*/
 .file-label {
    position: relative;
    display: inline-flex;
@@ -287,7 +280,7 @@ ul.social-list {
    outline-offset: 2px;
 }
 
-/* Upload trigger + popover (placed near avatar) */
+/* Upload trigger and popover*/
 .avatar-area {
    display: inline-block;
    position: relative;
@@ -374,7 +367,7 @@ ul.social-list {
    justify-content: flex-end;
 }
 
-/* Larger screen: overlay trigger on avatar and show popover to the right */
+/* Larger screen: trigger positioning */
 @media (min-width: 641px) {
    .avatar-area { position: relative }
    .upload-wrap { position: absolute; right: -12px; bottom: -12px; margin-top: 0 }
@@ -498,13 +491,11 @@ a, span {
    p{
    text-align: center;
 }
-
-
-   /* Mobile: ensure avatar area is positioned for the overlay */
+   /* Mobile view for Avatar area */
    .avatar-area { position: relative }
 
-   /* match the desktop placement exactly so the trigger sits just outside lower-right */
-   .upload-wrap { position: absolute; right: 45%; bottom: -1%; z-index: 10 }
+   /* trigger positoning */
+   .upload-wrap { position: absolute; right: 45%; left: 45%;bottom: -1%; z-index: 10 }
 
    .upload-trigger { background: rgba(0,0,0,0.35); border-radius: 999px; padding: 8px; width: 40px; height: 40px }
 
@@ -580,10 +571,10 @@ a, span {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 1000; /* 👈 Add this line */
+  z-index: 1000; 
 }
 .menu-links {
-  z-index: 1001; /* 👈 Make sure the dropdown is above everything */
+  z-index: 1001; 
 }
 
 }

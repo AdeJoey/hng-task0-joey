@@ -13,7 +13,7 @@
 		setTimeNow();
 	}
 
-	// --- Continuous ticker (updates every 100ms), pauses when page is hidden ---
+	// Continuous ticker (updates every 100ms).
 	let _ticker = null;
 	function startTicker() {
 		if (_ticker) return;
@@ -30,12 +30,12 @@
 
 	if (!document.hidden) startTicker();
 
-	// --- Avatar handling (URL or file) ---
+	// Avatar handling (URL or file)
 	const avatarImg = document.querySelector('[data-testid="test-user-avatar"]');
 	const defaultSrc = avatarImg ? avatarImg.src : '';
 	let currentBlobUrl = null;
 
-	// Popover controls/selectors
+	// Popover controls code
 	const uploadWrap = document.querySelector('.upload-wrap');
 	const trigger = uploadWrap && uploadWrap.querySelector('.upload-trigger');
 	const popover = document.getElementById('upload-popover');
@@ -113,7 +113,7 @@
 		window.addEventListener('beforeunload', ()=>{  });
 })();
 
-// --- Three-dot menu toggle ---
+// Three-dot menu toggle code
 const menuBtn = document.querySelector('.menu-trigger');
 const menuLinks = document.querySelector('.menu-links');
 

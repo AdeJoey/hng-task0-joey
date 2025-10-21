@@ -131,7 +131,7 @@ main {
   text-decoration: underline;
 }
 
-/* RIGHT SIDE (Form) */
+/* Form */
 form {
   flex: 1;
   display: flex;
@@ -191,7 +191,6 @@ form button:hover {
   margin: 6px 0 0;
 }
 input[aria-invalid="true"], textarea[aria-invalid="true"] {
-  /* already set inline in JS, but keep fallback here */
   border-bottom: 2px solid #ef4444;
 }
 
@@ -211,9 +210,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* =====================
-     RESPONSIVE SECTION
-   ===================== */
+/* RESPONSIVE SECTION */
 
 @media (max-width: 1024px) {
   .contact-container {

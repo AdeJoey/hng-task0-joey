@@ -33,7 +33,7 @@ body {
 ul {
   display: flex;
   justify-content: center;
-  align-items: center; /* 👈 ensures vertical centering */
+  align-items: center; 
   list-style: none;
   margin: 1rem 0;
   padding: 0;
@@ -44,7 +44,7 @@ ul a {
   color: var(--muted);
   text-decoration: none;
   transition: 0.3s;
-  display: flex; /* 👈 ensures SVG is centered inside link */
+  display: flex; 
   justify-content: center;
   align-items: center;
 }
@@ -54,9 +54,7 @@ ul a:hover {
   transform: scale(1.1);
 }
 
-/* -----------------------------
-   About Card Container
-   ----------------------------- */
+/*  About Card Container */
 .profile-wrap {
   width: 100%;
   max-width: var(--max-width);
@@ -82,9 +80,7 @@ article[data-testid="test-profile-card"] {
   padding: 10px;
 }
 
-/* -----------------------------
-   Avatar
-   ----------------------------- */
+/* Avatar */
 .avatar-figure {
   margin: 0;
   width: 120px;
@@ -104,9 +100,7 @@ img[data-testid="test-user-avatar"] {
   object-fit: cover;
 }
 
-/* -----------------------------
-   Header and text
-   ----------------------------- */
+/* Header and text */
 .profile-head h1 {
   margin: 0;
   font-size: 1.75rem;
@@ -137,9 +131,7 @@ img[data-testid="test-user-avatar"] {
   line-height: 1.45;
 }
 
-/* -----------------------------
-   Sections
-   ----------------------------- */
+/* Sections */
 .about-section {
   margin-top: 1.75rem;
   background: rgba(255, 255, 255, 0.02);
@@ -168,9 +160,7 @@ blockquote {
   color: #d4d8de;
 }
 
-/* -----------------------------
-   Responsive
-   ----------------------------- */
+/* Responsive */
 @media (max-width: 640px) {
   article[data-testid="test-profile-card"] {
     grid-template-columns: 1fr;
