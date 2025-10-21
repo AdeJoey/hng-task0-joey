@@ -577,12 +577,15 @@ a, span {
 
 @media (max-width: 640px) {
   .menu-container {
-    top: 6px;
-    right: 6px;
-  }
-  .menu-links {
-    right: -6px;
-  }
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* 👈 Add this line */
+}
+.menu-links {
+  z-index: 1001; /* 👈 Make sure the dropdown is above everything */
+}
+
 }
 
 

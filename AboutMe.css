@@ -28,16 +28,25 @@ body {
   background: linear-gradient(180deg, #181b1e, #33353b);
   color: #f1f5f9;
 }
+
+
 ul {
   display: flex;
+  justify-content: center;
+  align-items: center; /* 👈 ensures vertical centering */
   list-style: none;
-  flex-wrap: wrap;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
 }
 
 ul a {
   color: var(--muted);
   text-decoration: none;
   transition: 0.3s;
+  display: flex; /* 👈 ensures SVG is centered inside link */
+  justify-content: center;
+  align-items: center;
 }
 
 ul a:hover {
