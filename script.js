@@ -112,3 +112,22 @@
 
 		window.addEventListener('beforeunload', ()=>{  });
 })();
+
+// --- Three-dot menu toggle ---
+const menuBtn = document.querySelector('.menu-trigger');
+const menuLinks = document.querySelector('.menu-links');
+
+if (menuBtn && menuLinks) {
+  menuBtn.addEventListener('click', () => {
+    menuLinks.classList.toggle('show');
+    const hidden = menuLinks.getAttribute('aria-hidden') === 'true';
+    menuLinks.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!menuLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+      menuLinks.classList.remove('show');
+      menuLinks.setAttribute('aria-hidden', 'true');
+    }
+  });
+}

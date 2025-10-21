@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About Me — Joey Ade</title>
+    <link rel="stylesheet" href="AboutMe.css" />
+  </head>
+  <body>
+    <ul>
+          <li>
+            <a href="index.html" aria-label="Home">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <title>Home</title>
+                <path
+                  d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+    <div class="profile-wrap">
+      <main
+        data-testid="test-about-page"
+        class="about-card"
+        aria-labelledby="about-title"
+      >
+        <article data-testid="test-profile-card">
+          <figure class="avatar-figure avatar-area">
+            <img
+              src="https://684447f6175382135f2887d3--quiet-axolotl-2faf39.netlify.app/pptest.jpg"
+              alt="Joey Ade's profile picture"
+              data-testid="test-user-avatar"
+            />
+          </figure>
+
+          <header class="profile-head">
+            <h1 id="about-title">About Me</h1>
+            <p class="meta">
+              <span class="location">
+                <svg
+                  class="location-icon"
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="12" cy="9" r="2.5" fill="currentColor" />
+                </svg>
+                <span class="location-text">Lagos, Nigeria</span>
+              </span>
+            </p>
+            <p data-testid="test-user-bio">
+              I’m Joey Ade, a frontend engineer passionate about crafting
+              accessible, maintainable, and user-friendly interfaces that blend
+              beauty with performance.
+            </p>
+          </header>
+        </article>
+
+        <!-- Content Sections -->
+        <section
+          data-testid="test-about-goals"
+          aria-labelledby="goals-heading"
+          class="about-section"
+        >
+          <h2 id="goals-heading">Goals in this Program</h2>
+          <ul>
+            <li>
+              Build stronger fundamentals in advanced frontend frameworks.
+            </li>
+            <li>Contribute to real-world open-source collaborations.</li>
+            <li>Develop full-stack confidence for client projects.</li>
+          </ul>
+        </section>
+
+        <section
+          data-testid="test-about-confidence"
+          aria-labelledby="confidence-heading"
+          class="about-section"
+        >
+          <h2 id="confidence-heading">Areas of Low Confidence</h2>
+          <p>
+            I’m continuously improving my debugging workflow and backend
+            scalability knowledge. Patience and consistency remain my key focus
+            points.
+          </p>
+        </section>
+
+        <section
+          data-testid="test-about-future-note"
+          aria-labelledby="future-heading"
+          class="about-section"
+        >
+          <h2 id="future-heading">Note to My Future Self</h2>
+          <blockquote>
+            “Keep building, learning, and experimenting. The journey never ends
+            — it just evolves.”
+          </blockquote>
+        </section>
+
+        <section
+          data-testid="test-about-extra"
+          aria-labelledby="extra-heading"
+          class="about-section"
+        >
+          <h2 id="extra-heading">Extra Thoughts</h2>
+          <p>
+            When I’m not coding, I enjoy writing tech tutorials, exploring UI
+            motion design, and contributing to developer communities.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="about.js"></script>
+  </body>
+</html>

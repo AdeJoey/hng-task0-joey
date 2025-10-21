@@ -1,119 +1,305 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>Profile Card — Test</title>
-        <link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<div class="profile-wrap">
-			<article data-testid="test-profile-card" aria-labelledby="user-name">
-					<div class="avatar-area">
-						<figure class="avatar-figure">
-							<img data-testid="test-user-avatar" src="https://684447f6175382135f2887d3--quiet-axolotl-2faf39.netlify.app/pptest.jpg" alt="User avatar">
-							<figcaption class="visually-hidden">User avatar</figcaption>
-						</figure>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Profile Card — Test</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="profile-wrap">
+      <article data-testid="test-profile-card" aria-labelledby="user-name">
+        <!-- Top-right menu which contains links for the Contact and About page-->
+        <div class="menu-container">
+          <button class="menu-trigger" aria-label="Open menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="5" r="2" />
+              <circle cx="12" cy="12" r="2" />
+              <circle cx="12" cy="19" r="2" />
+            </svg>
+          </button>
 
-						<div class="upload-wrap">
-							<button class="upload-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="upload-popover" title="Change picture">
-								<svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M21 7h-3.586l-1.707-1.707A1 1 0 0 0 15.586 5H8.414a1 1 0 0 0-.707.293L6 7H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="3" stroke="currentColor" stroke-width="1.2"/></svg>
-							</button>
+          <div class="menu-links" aria-hidden="true">
+            <a href="AboutMe.html" title="About Page" class="menu-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"
+                />
+              </svg>
+            </a>
+            <a href="ContactUs.html" title="Contact Page" class="menu-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 4h16v16H4z" fill="none" />
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+		<!-- Avatar area which holds the profile picture and the upload-->
+        <div class="avatar-area">
+          <figure class="avatar-figure">
+            <img
+              data-testid="test-user-avatar"
+              src="https://684447f6175382135f2887d3--quiet-axolotl-2faf39.netlify.app/pptest.jpg"
+              alt="User avatar"
+            />
+            <figcaption class="visually-hidden">User avatar</figcaption>
+          </figure>
 
-							<div id="upload-popover" class="upload-popover" role="dialog" aria-modal="true" aria-hidden="true">
-								<button class="popover-close" type="button" aria-label="Close upload dialog">✕</button>
-								<div class="controls">
-									<form class="avatar-form" onsubmit="return false;" aria-label="Avatar controls">
-										<label for="avatar-url" class="truncate" title="Avatar URL">
-											<input id="avatar-url" name="avatar-url" type="url" placeholder="Paste avatar image URL" aria-label="Avatar image URL">
-										</label>
-										<label for="avatar-file" class="file-label">
-											<input id="avatar-file" name="avatar-file" type="file" accept="image/*" aria-label="Upload avatar image">
-										</label>
-										<div class="controls-row">
-											<button id="apply-avatar" type="button">Update</button>
-											<button id="reset-avatar" type="button">Reset</button>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
+          <div class="upload-wrap">
+            <button
+              class="upload-trigger"
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="upload-popover"
+              title="Change picture"
+            >
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 7h-3.586l-1.707-1.707A1 1 0 0 0 15.586 5H8.414a1 1 0 0 0-.707.293L6 7H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1z"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="12"
+                  cy="13"
+                  r="3"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                />
+              </svg>
+            </button>
 
-				<div>
-					<header class="profile-head">
-						<h2 id="user-name" data-testid="test-user-name">Joey Ade</h2>
-						<div class="row">
-							<span class="meta">Frontend engineer • <span class="location" aria-label="location"><svg class="location-icon" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/></svg><span class="location-text">Nigeria</span></span></span>
-							<span class="time" data-testid="test-user-time" aria-label="Current time in milliseconds" title="Current time in ms" aria-live="polite" role="status"></span>
-							</div>
-					</header>
+            <div
+              id="upload-popover"
+              class="upload-popover"
+              role="dialog"
+              aria-modal="true"
+              aria-hidden="true"
+            >
+              <button
+                class="popover-close"
+                type="button"
+                aria-label="Close upload dialog"
+              >
+                ✕
+              </button>
+              <div class="controls">
+                <form
+                  class="avatar-form"
+                  onsubmit="return false;"
+                  aria-label="Avatar controls"
+                >
+                  <label for="avatar-url" class="truncate" title="Avatar URL">
+                    <input
+                      id="avatar-url"
+                      name="avatar-url"
+                      type="url"
+                      placeholder="Paste avatar image URL"
+                      aria-label="Avatar image URL"
+                    />
+                  </label>
+                  <label for="avatar-file" class="file-label">
+                    <input
+                      id="avatar-file"
+                      name="avatar-file"
+                      type="file"
+                      accept="image/*"
+                      aria-label="Upload avatar image"
+                    />
+                  </label>
+                  <div class="controls-row">
+                    <button id="apply-avatar" type="button">Update</button>
+                    <button id="reset-avatar" type="button">Reset</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
-					<p data-testid="test-user-bio">I craft accessible, maintainable, and user-friendly web experiences.</p>
+        <div>
+          <header class="profile-head">
+            <h2 id="user-name" data-testid="test-user-name">Joey Ade</h2>
+            <div class="row">
+              <span class="meta"
+                >Frontend engineer •
+                <span class="location" aria-label="location"
+                  ><svg
+                    class="location-icon"
+                    aria-hidden="true"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="9" r="2.5" fill="currentColor" /></svg
+                  ><span class="location-text">Nigeria</span></span
+                ></span
+              >
+              <span
+                class="time"
+                data-testid="test-user-time"
+                aria-label="Current time in milliseconds"
+                title="Current time in ms"
+                aria-live="polite"
+                role="status"
+              ></span>
+            </div>
+          </header>
 
-					
+          <p data-testid="test-user-bio">
+           I craft accessible, maintainable, and user-friendly web experiences that combine clean design, efficient code, and seamless functionality for all users.
+          </p>
 
-					<div class="lists">
-						<section class="list" aria-labelledby="hobbies-heading">
-							<h3 id="hobbies-heading">Hobbies</h3>
-							<ul data-testid="test-user-hobbies">
-								<li>Building accessible UI components</li>
-								<li>Technical writing & tutorials</li>
-								<li>Contributing to open-source projects</li>
-							</ul>
-						</section>
+          <div class="lists">
+            <section class="list" aria-labelledby="hobbies-heading">
+              <h3 id="hobbies-heading">Hobbies</h3>
+              <ul data-testid="test-user-hobbies">
+                <li>Building accessible UI components</li>
+                <li>Technical writing & tutorials</li>
+                <li>Contributing to open-source projects</li>
+              </ul>
+            </section>
 
-						<section class="list" aria-labelledby="dislikes-heading">
-							<h3 id="dislikes-heading">Dislikes</h3>
-							<ul data-testid="test-user-dislikes">
-								<li>Unclear documentation</li>
-								<li>Non-accessible interfaces</li>
-								<li>Unnecessary complexity</li>
-							</ul>
-						</section>
-					</div>
+            <section class="list" aria-labelledby="dislikes-heading">
+              <h3 id="dislikes-heading">Dislikes</h3>
+              <ul data-testid="test-user-dislikes">
+                <li>Unclear documentation</li>
+                <li>Non-accessible interfaces</li>
+                <li>Unnecessary complexity</li>
+              </ul>
+            </section>
+          </div>
 
-                    <nav class="social" aria-label="social links" data-testid="test-user-social-links">
-						<ul class="social-list">
-							<li>
-								<a class="pill" data-testid="test-user-social-twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-									<span class="icon" aria-hidden="true">
-										<!-- Twitter -->
-										<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path d="M22 5.92c-.64.28-1.33.47-2.05.56.74-.44 1.3-1.13 1.57-1.96-.69.41-1.45.71-2.26.87C18.6 4.4 17.45 4 16.22 4c-1.8 0-3.26 1.46-3.26 3.26 0 .26.03.51.08.75C9.7 8.8 6.1 6.9 3.9 4c-.29.5-.45 1.08-.45 1.7 0 1.17.6 2.2 1.52 2.8-.56-.02-1.09-.17-1.55-.43v.04c0 1.6 1.14 2.94 2.65 3.24-.28.08-.57.12-.87.12-.21 0-.42-.02-.62-.06.42 1.3 1.64 2.24 3.09 2.27-1.13.88-2.56 1.4-4.11 1.4-.27 0-.54-.02-.8-.05C6.8 19.06 8.65 20 10.76 20c6.5 0 10.06-5.38 10.06-10.05v-.46c.7-.5 1.3-1.12 1.77-1.83-.64.28-1.33.47-2.05.56z"/>
-										</svg>
-									</span>
-									<span class="visually-hidden">Twitter</span>
-								</a>
-							</li>
-							<li>
-								<a class="pill" data-testid="test-user-social-github" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-									<span class="icon" aria-hidden="true">
-										<!-- GitHub -->
-										<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.94 3.2 9.12 7.64 10.6.56.1.76-.24.76-.53 0-.26-.01-.95-.01-1.86-3.11.68-3.77-1.5-3.77-1.5-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.69-1.45-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.4.11-2.92 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 2.78-.37c.94 0 1.89.13 2.78.37 2.12-1.44 3.05-1.14 3.05-1.14.61 1.52.23 2.64.11 2.92.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.24-5.1 5.52.39.34.73.99.73 2 0 1.44-.01 2.6-.01 2.96 0 .29.2.64.77.53C19.07 20.86 22.25 16.7 22.25 11.75 22.25 5.48 17.27.5 12 .5z"/>
-										</svg>
-									</span>
-									<span class="visually-hidden">GitHub</span>
-								</a>
-							</li>
-							<li>
-								<a class="pill" data-testid="test-user-social-linkedin" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-									<span class="icon" aria-hidden="true">
-										<!-- LinkedIn -->
-										<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-											<path d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98H5c1.1 0 1.98-.88 1.98-1.98C6.98 4.38 6.1 3.5 5 3.5h-.02zM3.5 8.98h3V20h-3V8.98zM9 8.98h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V20h-3v-5.08c0-1.21-.02-2.78-1.7-2.78-1.7 0-1.96 1.32-1.96 2.68V20H9V8.98z"/>
-										</svg>
-									</span>
-									<span class="visually-hidden">LinkedIn</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</article>
-		</div>
+          <nav
+            class="social"
+            aria-label="social links"
+            data-testid="test-user-social-links"
+          >
+            <ul class="social-list">
+              <li>
+                <a
+                  class="pill"
+                  data-testid="test-user-social-twitter"
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
+                  <span class="icon" aria-hidden="true">
+                    <!-- Twitter -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M22 5.92c-.64.28-1.33.47-2.05.56.74-.44 1.3-1.13 1.57-1.96-.69.41-1.45.71-2.26.87C18.6 4.4 17.45 4 16.22 4c-1.8 0-3.26 1.46-3.26 3.26 0 .26.03.51.08.75C9.7 8.8 6.1 6.9 3.9 4c-.29.5-.45 1.08-.45 1.7 0 1.17.6 2.2 1.52 2.8-.56-.02-1.09-.17-1.55-.43v.04c0 1.6 1.14 2.94 2.65 3.24-.28.08-.57.12-.87.12-.21 0-.42-.02-.62-.06.42 1.3 1.64 2.24 3.09 2.27-1.13.88-2.56 1.4-4.11 1.4-.27 0-.54-.02-.8-.05C6.8 19.06 8.65 20 10.76 20c6.5 0 10.06-5.38 10.06-10.05v-.46c.7-.5 1.3-1.12 1.77-1.83-.64.28-1.33.47-2.05.56z"
+                      />
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">Twitter</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="pill"
+                  data-testid="test-user-social-github"
+                  href="https://github.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                >
+                  <span class="icon" aria-hidden="true">
+                    <!-- GitHub -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.94 3.2 9.12 7.64 10.6.56.1.76-.24.76-.53 0-.26-.01-.95-.01-1.86-3.11.68-3.77-1.5-3.77-1.5-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.09.08 1.66 1.12 1.66 1.12.97 1.66 2.55 1.18 3.17.9.1-.7.38-1.18.69-1.45-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.4.11-2.92 0 0 .93-.3 3.05 1.14a10.6 10.6 0 0 1 2.78-.37c.94 0 1.89.13 2.78.37 2.12-1.44 3.05-1.14 3.05-1.14.61 1.52.23 2.64.11 2.92.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.24-5.1 5.52.39.34.73.99.73 2 0 1.44-.01 2.6-.01 2.96 0 .29.2.64.77.53C19.07 20.86 22.25 16.7 22.25 11.75 22.25 5.48 17.27.5 12 .5z"
+                      />
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="pill"
+                  data-testid="test-user-social-linkedin"
+                  href="https://linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <span class="icon" aria-hidden="true">
+                    <!-- LinkedIn -->
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="18"
+                      height="18"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.98 3.5C3.88 3.5 3 4.38 3 5.48c0 1.1.88 1.98 1.98 1.98H5c1.1 0 1.98-.88 1.98-1.98C6.98 4.38 6.1 3.5 5 3.5h-.02zM3.5 8.98h3V20h-3V8.98zM9 8.98h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V20h-3v-5.08c0-1.21-.02-2.78-1.7-2.78-1.7 0-1.96 1.32-1.96 2.68V20H9V8.98z"
+                      />
+                    </svg>
+                  </span>
+                  <span class="visually-hidden">LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </article>
+    </div>
 
-		<script src="script.js"></script>
-	</body>
+    <script src="script.js"></script>
+  </body>
 </html>

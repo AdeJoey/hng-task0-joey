@@ -44,6 +44,7 @@ body {
 
 article[data-testid="test-profile-card"] {
    display: grid;
+   position: relative;
    grid-template-columns: 120px 1fr;
    gap: 20px;
    align-items: start;
@@ -81,7 +82,7 @@ img[data-testid="test-user-avatar"] {
 header.profile-head {
    display: flex;
    flex-direction: column;
-   gap: 6px;
+   gap: 2px;
 }
 
 h2 {
@@ -124,18 +125,20 @@ h2 {
    color: var(--muted);
    font-size: 0.9rem;
 }
-
 p[data-testid="test-user-bio"] {
-   margin: 8px 0 0 0;
-   color: #bbbcbe;
-   line-height: 1.45;
+  max-width: 90%;
+  line-height: 1.5;
+  color:  #cbd5e1;
 }
 
-p[data-testid="test-user-bio"] {
-   max-width: clamp(28ch, 45ch + 4vw, 60ch);
-   display: block;
+@media (max-width:640px) {
+   p[data-testid="test-user-bio"] {
+  margin: 10px auto;
+  max-width: 90%;
+  line-height: 1.5;
+  color: #cbd5e1;
 }
-
+}
 /* -----------------------------
    Social pills (icon-only)
    ----------------------------- */
@@ -389,6 +392,7 @@ section.list {
 section.list h3 {
    margin: 0 0 8px 0;
    font-size: 0.95rem;
+   color: var(--muted);
 }
 
 ul {
@@ -467,6 +471,11 @@ a, span {
       grid-template-columns: 1fr;
       text-align: center;
    }
+    [data-testid="test-user-bio"] {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
 
    .avatar-figure {
       margin: auto !important;
@@ -507,6 +516,74 @@ a, span {
    }
 }
 
+/* Three-dot Menu */
+.menu-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.menu-trigger {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.menu-trigger:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+
+.menu-links {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(24,24,27,0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.menu-links.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: var(--muted);
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.menu-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .menu-container {
+    top: 6px;
+    right: 6px;
+  }
+  .menu-links {
+    right: -6px;
+  }
+}
 
 
 
